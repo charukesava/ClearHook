@@ -1,0 +1,73 @@
+.background-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.mesh-gradient,
+.grid-overlay,
+.particle-field,
+.orb {
+  position: absolute;
+}
+
+.mesh-gradient {
+  inset: -10% -20%;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(109, 40, 217, 0.28), transparent 24%),
+    radial-gradient(circle at 80% 18%, rgba(59, 130, 246, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 75%, rgba(6, 182, 212, 0.14), transparent 32%),
+    linear-gradient(135deg, rgba(9, 9, 11, 0.96) 0%, rgba(17, 24, 39, 0.93) 55%, rgba(9, 9, 11, 1) 100%);
+  transform: translate3d(calc(var(--pointer-x, 50vw) * 0.012), calc(var(--pointer-y, 50vh) * 0.012), 0);
+  filter: saturate(1.05);
+}
+
+.grid-overlay {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.18;
+  mask-image: radial-gradient(circle at center, black 24%, transparent 78%);
+}
+
+.particle-field {
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.08;
+  transform: translate3d(calc(var(--pointer-x, 50vw) * -0.01), calc(var(--pointer-y, 50vh) * -0.01), 0);
+}
+
+.orb {
+  border-radius: 999px;
+  filter: blur(30px);
+  opacity: 0.55;
+}
+
+.orb-left {
+  width: 22rem;
+  height: 22rem;
+  top: 8rem;
+  left: -7rem;
+  background: rgba(109, 40, 217, 0.25);
+}
+
+.orb-right {
+  width: 18rem;
+  height: 18rem;
+  top: 4rem;
+  right: -5rem;
+  background: rgba(59, 130, 246, 0.22);
+}
+
+.orb-bottom {
+  width: 26rem;
+  height: 26rem;
+  bottom: -10rem;
+  right: 20%;
+  background: rgba(6, 182, 212, 0.16);
+}
